@@ -2,6 +2,23 @@
     display: flex;
 }
 
+.about__columns {
+    display: flex;
+    padding: 169px 17% 268px;
+    justify-content: space-between;
+
+    @include desktop {
+      padding-right: 2%;
+      padding-left: 2%;
+    }
+
+    @include phones {
+      flex-direction: column;
+      padding-top: 114px;
+      padding-bottom: 114px;
+    }
+}
+
 .user__data-title {
     padding-right: 90px;
 }
@@ -14,9 +31,9 @@
     flex: 1;
 
     &:after {
-        position: absolute;
-        left: 20px;
-        bottom: 40px;
+        position: relative;
+        right: 45px;
+        bottom: 85px;
         content: url('~images/content/star.png');
         opacity: .5;
     }
