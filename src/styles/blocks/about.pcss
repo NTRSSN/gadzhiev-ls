@@ -4,7 +4,7 @@
 
 .about__columns {
     display: flex;
-    padding: 169px 17% 268px;
+    padding: 169px 12% 268px;
     justify-content: space-between;
 
     @include desktop {
@@ -21,19 +21,28 @@
 
 .user__data-title {
     padding-right: 90px;
+    font-weight: 600;
+    opacity: .4;
+}
+
+td {
+    padding: 3%;
 }
 
 .about__user {
     width: 45%;
+    margin-right: 15px;
 }
 
 .about__content {
     flex: 1;
+    margin-left: 15px;
+    line-height: 2;
 
     &:after {
         position: relative;
         right: 45px;
-        bottom: 85px;
+        bottom: 90px;
         content: url('~images/content/star.png');
         opacity: .5;
     }
@@ -42,7 +51,7 @@
 .about__desc {
     font-weight: 600;
     opacity: .8;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .about__title {
@@ -54,6 +63,7 @@
 .about__text-info {
     font-weight: 600;
     opacity: .8;
+    margin-bottom: 15%;
 }
 
 .about__ps {
