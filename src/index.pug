@@ -5,13 +5,19 @@ block content
     section.hero
       .container.hero__container
         header.header
-          a.logo(href="#" target="_blank") РГ
+          .logo РГ
           nav.menu
-            - var menuItems = ["Обо мне", "Навыки", "Работы", "Отзывы"];
+            - 
+              var menuItems = [
+                ["Обо мне", "#about"],
+                ["Навыки", "#values"],
+                ["Работы", "#works"],
+                ["Отзывы", "#reviews"]
+              ];
             ul.menu__list
               each item in menuItems
                 li.menu__item
-                  a(href="#").menu__link #{item}
+                  a(href=item[1]).menu__link #{item[0]}
 
           - var socials = ["insta", "github", "vk", "envelope"];
           ul.socials
@@ -28,35 +34,37 @@ block content
           a(href="#about").scroll-down-btn Скролл
             +icon("scroll", "scroll-down__icon")
 
-    section.about
+    section.about#about
       .container.about__container
-        .about__columns
-          .about__user
-            .user
-              .user__avatar
-                .user__avatar-style
-                  +image('content/user.jpg', 'user__avatar-pic')
-              -
-                var userInfo = [
-                  ["Проживаю:", "Москва"],
-                  ["Возраст:", "35 лет"],
-                  ["Родился:", "20 ноября 1984"],
-                ];
+        .about__columns-wrap
+          .about__columns
+            .about__user
+              .user
+                .user__avatar
+                  .user__avatar-style
+                    +image('content/user.jpg', 'user__avatar-pic')
+                -
+                  var userInfo = [
+                    ["Проживаю:", "Москва"],
+                    ["Возраст:", "35 лет"],
+                    ["Родился:", "20 ноября 1984"],
+                  ];
 
-              table.user__data
-                each item in userInfo
-                  tr.user__data-row
-                    td.user__data-title #{item[0]}
-                    td.user__data-content #{item[1]}
-          .about__content
-            .about__desc Привет, меня зовут
-            .about__title Руслан Гаджиев
-            .about__text-info
-              p Я занимаюсь разработкой современных сайтов и приложений. #[br] Мне нравится делать интересные и современные проекты.
-            .about__ps
-              | Этот сайт я сделал в рамках обучения в Школе онлайн образования #[br] LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, #[br] как тут всё классно и красиво!
+                table.user__data
+                  each item in userInfo
+                    tr.user__data-row
+                      td.user__data-title #{item[0]}
+                      td.user__data-content #{item[1]}
+            .about__content
+              .about__desc Привет, меня зовут
+              .about__title Руслан Гаджиев
+              .about__text-info
+                p Я занимаюсь разработкой современных сайтов и приложений. #[br] Мне нравится делать интересные и современные проекты.
+              .about__ps
+                | Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+  
   .middle-section
-    section.values
+    section.values#values
       .container.values__container
         .values__wrapper
           .values__title
@@ -84,12 +92,13 @@ block content
                               svg(viewBox="0 0 100 100").skill__circle-shape
                                 circle(cx="50" cy="50" r="40").skill__circle.skill__circle--layer--under
                                 circle(cx="50" cy="50" r="40" stroke="url(#gradient)" transform="rotate(180 50 50)").skill__circle.skill__circle--layer--above
-                                linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
-                                  stop(offset="0%" stop-color="#D0731B")
-                                  stop(offset="100%" stop-color="#DC9322")
                               .skill__title #{skill}
+                      svg(aria-hidden="true").skill__circle-gradient
+                        linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
+                          stop(offset="0%" stop-color="#D0731B")
+                          stop(offset="100%" stop-color="#DC9322")
 
-    section.works
+    section.works#works
       .container.works__container
         .section-title.works__title Мои работы
         .works__content
@@ -98,12 +107,12 @@ block content
               .works-slider__pics-content
                 +image('content/slider-1.jpg', 'works-slider__fullpic')
                 .works-slider__buttons
-                  a(href="#").works-slider__btn.works-slider__btn_prev
-                  a(href="#").works-slider__btn.works-slider__btn_next
+                  button(type="button").works-slider__btn.works-slider__btn_prev
+                  button(type="button").works-slider__btn.works-slider__btn_next
                 ul.works-slider__thumbs
                   - for (var i = 4; i > 0; i--)
                     li.works-slider__thumb-item(class=`${i === 1 ? 'active' : ''}`)
-                      a(href="" target="_blank").works-slider__thumb-link
+                      button(type="button" target="_blank").works-slider__thumb-link
                         +image(`content/slider-${i}.jpg`, 'works-slider__thumb')
             .works-slider__data
               ul.works-slider__tags
@@ -117,40 +126,41 @@ block content
               .works-slider__link
                 a(href="#" target="_blank").iconed-link Посмотреть сайт
 
-  section.reviews
+  section.reviews#reviews
     .container.slider__container
       .reviews__about
         .slider
           .slider__header
             .reviews__title.section-title Что обо мне говорят
             .slider__buttons
-              .slider__btn.round-btn.round-btn--pointer--left
-              .slider__btn.round-btn.round-btn--pointer--right
-          ul.slider__content
-            li.slider__item
-              .quote
-                .quote__text
-                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
-                .quote__user
-                  .user-display
-                    .user-display__avatar
-                      .user-display__avatar-style
-                        +image("content/kovaldn.jpg", "user-display__pic")
-                    .user-display__data
-                      .user-display__name Дмитрий Ковальчук
-                      .user-display__occ Основатель Loftschool
-            li.slider__item
-              .quote
-                .quote__text
-                  p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
-                .quote__user
-                  .user-display
-                    .user-display__avatar
-                      .user-display__avatar-style
-                        +image("content/sabantsev.jpg", "user-display__pic")
-                    .user-display__data
-                      .user-display__name Владимир Сабанцев
-                      .user-display__occ Преподаватель Loftschool
+              button(type="button").slider__btn.round-btn.round-btn--pointer--left
+              button(type="button").slider__btn.round-btn.round-btn--pointer--right
+          .slider__content-wrap
+            ul.slider__content
+              li.slider__item
+                .quote
+                  .quote__text
+                    p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .quote__user
+                    .user-display
+                      .user-display__avatar
+                        .user-display__avatar-style
+                          +image("content/kovaldn.jpg", "user-display__pic")
+                      .user-display__data
+                        .user-display__name Дмитрий Ковальчук
+                        .user-display__occ Основатель Loftschool
+              li.slider__item
+                .quote
+                  .quote__text
+                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+                  .quote__user
+                    .user-display
+                      .user-display__avatar
+                        .user-display__avatar-style
+                          +image("content/sabantsev.jpg", "user-display__pic")
+                      .user-display__data
+                        .user-display__name Владимир Сабанцев
+                        .user-display__occ Преподаватель Loftschool
 
   footer.footer
     .container.footer__container
@@ -163,9 +173,9 @@ block content
       .footer__data
         nav.menu.menu--color-white.footer__data-menu
           ul.menu__list
-            each item in menuItems 
-              li.menu__item
-                a(href="#").menu__link #{item}
+              each item in menuItems
+                li.menu__item
+                  a(href=item[1]).menu__link #{item[0]}
         .footer__data-content
           .footer__data-col
             .footer__data-text

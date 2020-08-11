@@ -1,32 +1,32 @@
 .values {
   background: url('~images/bg/values1800.jpg') center top / cover no-repeat;
-  margin-bottom: 114px;
 
   @include phones {
     margin-bottom: 75px;
   }
-}
 
-.values__container {
-  position: relative;
-  padding: 140px 0;
-
-  @include tablets {
-    padding-bottom: 350px;
-  }
   &:before {
     content: "";
     position: absolute;
     background: url('~images/bg/hands-keyboard1800.png') left bottom / contain no-repeat;
     display: block;
     left: 0%;
-    bottom: -9%;
-    height: 90%;
-    width: 90%;
+    bottom: 36.3%;
+    height: 21%;
+    width: 50%;
 
     @include phones {
       width: 100%;
     }
+  }
+}
+
+.values__container {
+  position: relative;
+  padding: 8% 0 0;
+
+  @include tablets {
+    padding-bottom: 350px;
   }
 }
 
@@ -35,7 +35,7 @@
 }
 
 .values__title {
-  margin-bottom: 82px;
+  margin-bottom: 80px;
   display: flex;
   justify-content: center;
 }

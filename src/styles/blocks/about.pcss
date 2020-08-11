@@ -4,8 +4,14 @@
 
 .about__columns {
     display: flex;
-    padding: 169px 12% 268px;
+    padding: 12.2% 0 26.2%;
     justify-content: space-between;
+
+    &-wrap {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 
     @include desktop {
       padding-right: 2%;
@@ -19,24 +25,26 @@
     }
 }
 
+td {
+    padding: 3%;
+}
+
+.user__data {
+    min-width: 400px;
+}
+
 .user__data-title {
     padding-right: 90px;
     font-weight: 600;
     opacity: .4;
 }
 
-td {
-    padding: 3%;
-}
-
 .about__user {
     width: 45%;
-    margin-right: 15px;
 }
 
 .about__content {
     flex: 1;
-    margin-left: 15px;
     line-height: 2;
 
     &:after {
