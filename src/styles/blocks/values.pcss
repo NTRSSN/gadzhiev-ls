@@ -1,4 +1,5 @@
 .values {
+  position: relative;
   background: url('~images/bg/values1800.jpg') center top / cover no-repeat;
 
   @include phones {
@@ -10,10 +11,11 @@
     position: absolute;
     background: url('~images/bg/hands-keyboard1800.png') left bottom / contain no-repeat;
     display: block;
-    left: 0%;
-    bottom: 36.3%;
-    height: 21%;
-    width: 50%;
+    left: 36.5%;
+    transform: translateX(-100%);
+    bottom: -91px;
+    height: 983px;
+    width: 662px;
 
     @include phones {
       width: 100%;
