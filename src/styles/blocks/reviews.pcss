@@ -1,0 +1,92 @@
+.slider__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 95px;
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 33px;
+  }
+}
+
+.slider__item {
+  flex-shrink: 0;
+  padding-right: 1.875rem;
+  width: 50%;
+}
+
+.reviews__title.section-title {
+  margin-bottom: 0;
+  margin-right: 13%;
+  @include phones {
+    margin-right: 0%;
+    margin-bottom: 25px;
+  }
+}
+
+.slider__buttons {
+  display: flex;
+}
+
+.round-btn {
+  width: 50px;
+  height: 50px;
+  border: 2px solid $text-color;
+  position: relative;
+  border-radius: 50%;
+  margin-right: 30px;
+  color: $text-color;
+  opacity: 0.7;
+
+  &:hover {
+    opacity: 1;
+    transition: opacity .3s;
+  }
+
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &:before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    display: block;
+    background: svg-load('arrow-down.svg', fill=$text-color) center center / contain no-repeat;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-42%, -50%);
+  }
+
+  &--pointer--left {
+    &:before {
+      transform: translate(-62%, -50%) rotate(-180deg);
+    }
+  }
+}
+
+.slider__content {
+  overflow: hidden;
+  display: flex;
+
+  &-wrap {
+    width: 100%;
+    max-width: 970px;
+  }
+}
+
+.slider-item {
+  flex-shrink: 0;
+  padding-right: 30px;
+  width: 50%;
+
+  @include phones {
+    margin-right: 0;
+    width: 100%;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,89 @@
+.values {
+  position: relative;
+  background: url('~images/bg/values1800.jpg') center top / cover no-repeat;
+
+  @include phones {
+    margin-bottom: 75px;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    background: url('~images/bg/hands-keyboard1800.png') left bottom / contain no-repeat;
+    display: block;
+    left: 36.5%;
+    transform: translateX(-100%);
+    bottom: -91px;
+    height: 983px;
+    width: 662px;
+
+    @include phones {
+      width: 100%;
+    }
+  }
+}
+
+.values__container {
+  position: relative;
+  padding: 8% 0 0;
+
+  @include tablets {
+    padding-bottom: 350px;
+  }
+}
+
+.values__wrapper {
+  position: relative;
+}
+
+.values__title {
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.values__title-container {
+  width: 42%;
+  margin-left: 6%;
+  @include desktop {
+    width: 42%;
+    margin-left: 0;
+  }
+  @include tablets {
+    width: 68%;
+    text-align: center;
+  }
+  @include phones {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+  }
+}
+
+.values__title-text {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 55px;
+}
+
+.values__content {
+  color: rgba($text-color, .5);
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.values__widget {
+  display: flex;
+  justify-content: flex-end;
+  @include tablets {
+    justify-content: center;
+  }
+}
+
+.values__widget-container {
+  width: 55%;
+
+  @include tablets {
+    width: 95%;
+  }
+}
