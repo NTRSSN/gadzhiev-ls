@@ -7,15 +7,14 @@
     padding: 12.2% 0 26.2%;
     justify-content: space-between;
 
+    @include tablets {
+        padding: 37% 0 19%;
+    }
+
     &-wrap {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-  }
-
-    @include desktop {
-      padding-right: 2%;
-      padding-left: 2%;
     }
 
     @include phones {
@@ -31,16 +30,23 @@ td {
 
 .user__data {
     min-width: 400px;
+
+    @include tablets {
+        min-width: 270px;
+    }
 }
 
 .user__data-title {
-    padding-right: 90px;
     font-weight: 600;
     opacity: .4;
 }
 
 .about__user {
     width: 45%;
+
+    @include tablets {
+        width: 40%;
+    }
 }
 
 .about__content {
@@ -54,6 +60,10 @@ td {
         bottom: 90px;
         content: url('~images/content/star.png');
         opacity: .5;
+
+        @include tablets {
+            right: 38px;
+        }
     }
 }
 
@@ -61,18 +71,30 @@ td {
     font-weight: 600;
     opacity: .8;
     margin-bottom: 10px;
+
+    @include tablets {
+        margin-bottom: 0;
+    }
 }
 
 .about__title {
     font-weight: bold;
     font-size: 36px;
     margin-bottom: 25px;
+
+    @include tablets {
+        margin-bottom: 12px;
+    }
 }
 
 .about__text-info {
     font-weight: 600;
     opacity: .8;
     margin-bottom: 15%;
+
+    @include tablets {
+    margin-bottom: 6%;
+    }
 }
 
 .about__ps {

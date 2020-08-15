@@ -3,6 +3,10 @@
   position: relative;
 
   @include tablets {
+    padding-left: 15%;
+  }
+
+  @include phones {
     padding-left: 0;
   }
 
@@ -18,13 +22,18 @@
     left: 0;
 
     @include tablets {
+      width: 42px;
+      height: 42px;
+    }
+
+    @include phones {
       background: none;
     }
   }
 }
 
 .quote__text {
-  margin-bottom: 30px;
+  margin-bottom: 34px;
   color: rgba($text-color, .5);
   font-weight: 600;
   line-height: 1.8;

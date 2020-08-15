@@ -16,7 +16,7 @@
   height: 440px;
 
   @include tablets {
-    margin-bottom: 105px;
+    margin-bottom: 32px;
     width: 86%;
   }
   &:before {
@@ -183,6 +183,10 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 26px;
+
+  @include tablets {
+  margin-bottom: 20px;
+  }
 }
 
 .works-slider__tag-item {
@@ -195,16 +199,21 @@
   margin-bottom: 42px;
   font-weight: bold;
   color: rgba(51, 60, 73, 0.8);
+
+  @include tablets {
+    margin-bottom: 14px;
+  }
 }
 
 .works-slider__desc {
   font-weight: 600;
   line-height: 1.8;
   color: rgba(51, 60, 73, 0.8);
-}
-
-.works-slider__desc {
   margin-bottom: 38px;
+
+  @include tablets {
+  margin-bottom: 28px;
+  }
 }
 
 .works-slider__link {

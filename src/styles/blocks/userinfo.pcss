@@ -1,16 +1,25 @@
 .userinfo {
     display: flex;
     justify-content: center;
-    
+
+    @include tablets {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 .userinfo__title {    
-    margin-right: 35px;
+    margin: 10px 35px 0 0;
     font-weight: 600;
     font-size: 18px;
     text-align: end;
     opacity: 0.5;
-    margin-top: 10px;
+
+    @include tablets {
+        margin: 0 0 40px;
+        text-align: center;
+        line-height: 1.8;
+    }
 }
 
 .userinfo__name {
@@ -18,4 +27,10 @@
     font-size: 72px;
     flex-basis: 430px;
     line-height: .85;
+
+    @include tablets {
+        font-size: 48px;
+        text-align: center;
+        line-height: 0.9;
+    }
 }

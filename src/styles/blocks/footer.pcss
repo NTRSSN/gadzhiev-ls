@@ -3,6 +3,7 @@
   padding: 88px 0;
   color: rgba($text-color, .6);
   line-height: 1.7;
+  
   @include tablets {
     padding: 50px 0;
   }
@@ -11,6 +12,11 @@
 .footer__container {
   display: flex;
   justify-content: space-between;
+  
+  @include tablets {
+    padding: 0 3%;
+  }
+  
   @include phones {
     flex-direction: column;
   }
@@ -24,6 +30,7 @@
 
   @include desktop {
     justify-content: flex-start;
+    flex-direction: column;
     width: 20%;
   }
   @include tablets {
@@ -80,11 +87,12 @@
 .footer__data {
   width: 66%;
   padding-top: 7px;
+  
   @include desktop {
     width: 75%;
   }
   @include tablets {
-    width: 60%;
+    width: 66%;
   }
   @include phones {
     width: 100%;
@@ -105,7 +113,8 @@
   .menu__item {
     margin-right: 6%;
     @include tablets {
-      margin-bottom: 32px;
+      margin-right: 12%;
+      margin-bottom: 20px;
     }
   }
 }
