@@ -2,6 +2,10 @@
 
   &--color-white {
     color: rgba($text-color, 1);
+
+    @include phones {
+        color: inherit;
+    }
   }
 }
 

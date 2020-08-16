@@ -27,12 +27,23 @@ block content
                 li.socials__item
                   a(href="#" target="_blank").socials__link
                     +icon(item, "socials__icon")
-              +icon("cross", "menu__item close")
-            .hamburger-wrap
-              .hamburger
-                span.hamburger__plank
-                span.hamburger__plank
-                span.hamburger__plank
+              .closing-cross
+                +icon("cross", "menu__item close")
+            
+          .hamburger-wrap
+            .hamburger
+              span.hamburger__plank
+              span.hamburger__plank
+              span.hamburger__plank
+            ul.popup-menu
+              each item in menuItems
+                li.menu__item
+                  a(href=item[1]).menu__link #{item[0]}
+              ul.socials
+                each item in socials
+                  li.socials__item
+                    a(href="#" target="_blank").socials__link
+                      +icon(item, "socials__icon")
 
         .userinfo
           .userinfo__title Личный сайт #[br] веб разработчика
@@ -41,16 +52,6 @@ block content
         .hero__bottom-buttons
           a(href="#about").scroll-down-btn Скролл
             +icon("scroll", "scroll-down__icon")
-
-        ul.popup-menu
-          each item in menuItems
-            li.menu__item
-              a(href=item[1]).menu__link #{item[0]}
-          ul.socials
-              each item in socials
-                li.socials__item
-                  a(href="#" target="_blank").socials__link
-                    +icon(item, "socials__icon")
 
     section.about#about
       .container.about__container

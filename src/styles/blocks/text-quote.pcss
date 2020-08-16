@@ -3,6 +3,10 @@
 }
 
 .text-quote__author {
-  color: #fff;
+  color: rgba($text-color, 1);
   font-style: italic;
+
+  @include phones {
+    color: inherit;
+  }
 }
