@@ -76,12 +76,12 @@ new Vue({
                 case "next":
                     this.works.push(this.works[0]);
                     this.works.shift();
-                    this.currentIndex++
+                    this.currentIndex++;
                     break;
                 case "prev":
                     this.works.unshift(lastItem);
                     this.works.pop();
-                    this.currentIndex--
+                    this.currentIndex--;
                     break;
             }
         },

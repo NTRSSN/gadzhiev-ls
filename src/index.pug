@@ -26,16 +26,13 @@ block content
               each item in socials
                 li.socials__item
                   a(href="#" target="_blank").socials__link
-                    +icon(item, "socials__icon")
-              .closing-cross
-                +icon("cross", "menu__item close")
-            
-          .hamburger-wrap
-            .hamburger
-              span.hamburger__plank
-              span.hamburger__plank
-              span.hamburger__plank
-            ul.popup-menu
+                    +icon(item, "socials__icon")          
+          .hamburger
+            span.hamburger__plank
+            span.hamburger__plank
+            span.hamburger__plank
+          ul.popup-menu
+            .popup-menu__wrap
               each item in menuItems
                 li.menu__item
                   a(href=item[1]).menu__link #{item[0]}
@@ -44,6 +41,8 @@ block content
                   li.socials__item
                     a(href="#" target="_blank").socials__link
                       +icon(item, "socials__icon")
+                .closing-cross
+                  +icon("cross", "menu__item close") 
 
         .userinfo
           .userinfo__title Личный сайт #[br] веб разработчика
@@ -103,7 +102,7 @@ block content
   section.reviews#reviews
     .container.slider__container
       .reviews__about
-        #slider-container
+        #slider-component
 
   footer.footer
     .container.footer__container

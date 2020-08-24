@@ -41,5 +41,5 @@ new Vue({
     },
     created() {
         this.skills = require("../data/skills.json");
-    }
+    },
 });
