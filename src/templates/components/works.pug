@@ -1,4 +1,4 @@
-script(type="text/x-template")#slider-container
+script(type="text/x-template")#preview-container
     .works-slider
         display(
             :currentWork="currentWork"
@@ -29,7 +29,7 @@ script(type="text/x-template")#preview-thumbs
         li.works-slider__thumb-item(
             v-for="slide in works" :key="slide.id"
             :class="{active: currentWork.id === slide.id}"
-            )
+        )
             button(type="button" target="_blank").works-slider__thumb-link
                 img(:src="slide.photo").works-slider__thumb
 

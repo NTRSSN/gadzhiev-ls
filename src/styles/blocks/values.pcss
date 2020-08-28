@@ -11,11 +11,15 @@
     position: absolute;
     background: url('~images/bg/hands-keyboard1800.png') left bottom / contain no-repeat;
     display: block;
-    transform: translateX(-100%);
-    left: 36.5%;
+    left: 0;
     bottom: -91px;
     height: 983px;
     width: 662px;
+
+    @include desktopHd {
+      transform: translateX(-100%);
+      left: 36.5%;
+    }
 
     @include tablets {
       transform: rotate(-90deg);
