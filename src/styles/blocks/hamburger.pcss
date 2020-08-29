@@ -1,0 +1,90 @@
+.hamburger {
+  width: 34px;
+  height: 30px;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+  
+  @include tablets {
+    display: inline-flex;
+  }
+}
+
+.hamburger__plank {
+  display: block;
+  background: #fff;
+  height: 5px;
+}
+
+.popup-menu {
+  display: flex;
+  background: url('~images/bg/bg-popup768.jpg');
+  position: fixed;
+  background-position-x: left;
+  background-repeat: no-repeat;
+  background-size: 56% 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: -1;
+  background-color: #ffffff;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  line-height: 2;
+  opacity: 0;
+  transition: .5s;
+
+  @include phones {
+    background: #ffffff;
+  }
+
+  &__wrap {
+    margin-left: 55vw;
+
+    @include phones {
+      min-width: 70%;
+      margin-left: 0;
+    }
+
+    .socials {
+      margin-top: 80px;
+      justify-content: space-between;
+    }
+  }
+
+  .menu__item {
+    color: #414C63;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .socials__icon {
+    fill: #414C63;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 70px;
+  right: 44px;
+  cursor: pointer;
+  fill: #414C63;
+  width: 34px;
+  height: 34px;
+  display: none;
+
+  @include tablets {
+    display: block;
+  }
+}
+
+.menu_opened {
+  z-index: 100;
+  opacity: 1;
+  margin: 0;
+  padding: 0;  
+}

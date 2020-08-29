@@ -6,11 +6,23 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 3% 0 3%;
+        padding: 3% 0;
+
+        @include tablets {
+        padding-top: 7%;
+        }
+        
+        @include phones {
+        padding-top: 12%;
+        }
     }
     
     &__bottom-buttons {
         display: flex;
         justify-content: center;
+
+        @include tablets {
+            visibility: hidden;
+        }
     }
 }

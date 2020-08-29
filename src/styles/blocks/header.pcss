@@ -2,4 +2,29 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include tablets {
+        padding: 0 3%;
+    }
+
+    &__menu {
+
+        @include tablets {
+            display: none;
+        }
+    }
+    &__col--right {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+
+        @include tablets {
+            margin-left: 38%;
+        }
+
+        @include phones {
+            display: none;
+        }
+    }
 }

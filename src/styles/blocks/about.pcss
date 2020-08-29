@@ -7,15 +7,14 @@
     padding: 12.2% 0 26.2%;
     justify-content: space-between;
 
+    @include tablets {
+        padding: 37% 0 19%;
+    }
+
     &-wrap {
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
-  }
-
-    @include desktop {
-      padding-right: 2%;
-      padding-left: 2%;
     }
 
     @include phones {
@@ -27,20 +26,47 @@
 
 td {
     padding: 3%;
+
+    @include phones {
+        padding: 2% 15% 2% 0;
+    }
+}
+
+.user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .user__data {
     min-width: 400px;
+
+    @include tablets {
+        min-width: 270px;
+    }
+
+    @include phones {
+        width: 100%;
+    }
 }
 
 .user__data-title {
-    padding-right: 90px;
     font-weight: 600;
     opacity: .4;
 }
 
 .about__user {
     width: 45%;
+
+    @include tablets {
+        width: 40%;
+    }
+
+    @include phones {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 14%;
+    }
 }
 
 .about__content {
@@ -48,12 +74,24 @@ td {
     line-height: 2;
     margin-left: 50px;
 
+    @include phones {
+        margin-left: 0;
+    }
+
     &:after {
         position: relative;
         right: 45px;
         bottom: 90px;
         content: url('~images/content/star.png');
         opacity: .5;
+
+        @include tablets {
+            right: 38px;
+        }
+
+        @include phones {
+            right: 28px;
+        }
     }
 }
 
@@ -61,18 +99,34 @@ td {
     font-weight: 600;
     opacity: .8;
     margin-bottom: 10px;
+
+    @include tablets {
+        margin-bottom: 0;
+    }
 }
 
 .about__title {
     font-weight: bold;
     font-size: 36px;
     margin-bottom: 25px;
+
+    @include tablets {
+        margin-bottom: 12px;
+    }
+    
+    @include phones {
+        margin-bottom: 12%;
+    }
 }
 
 .about__text-info {
     font-weight: 600;
     opacity: .8;
     margin-bottom: 15%;
+
+    @include tablets {
+    margin-bottom: 22%;
+    }
 }
 
 .about__ps {

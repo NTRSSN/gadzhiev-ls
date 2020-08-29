@@ -1,14 +1,20 @@
 .works__container {
   padding: 10.2% 0;
 
+  @include tablets {
+    padding: 15.5% 0;
+  }
+
   @include phones {
     width: 100%;
+    padding: 0 0 28%;
   }
 }
 
 .works__content {
   padding-bottom: 60px;
-  @include phones {
+  
+  @include tablets {
     padding-bottom: 0px;
   }
 }
@@ -16,6 +22,10 @@
 .works__title {
   margin-bottom: 85px;
   color: rgba(51, 60, 73, 0.8);
+
+  @include tablets {
+    margin-bottom: 52px;
+  }
 
   @include phones {
     text-align: center;

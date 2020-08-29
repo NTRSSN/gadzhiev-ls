@@ -1,0 +1,61 @@
+script(type="text/x-template")#preview-container
+    .works-slider
+        display(
+            :currentWork="currentWork"
+            :works="works"
+            :currentIndex="currentIndex"
+            @slide="slide"
+        )
+        info(
+            :currentWork="currentWork"
+        )
+
+script(type="text/x-template")#preview-display
+    .works-slider__pics(:data-slide="currentIndex + 1")
+        .works-slider__pics-content
+            img(:src="currentWork.photo").works-slider__fullpic
+            .works-preview__thumbs
+                thumbs(
+                    :works="reversedWorks"
+                    :currentWork="currentWork"
+                )
+            .works-preview__btns
+                btns(
+                    @slide="$emit('slide', $event)"
+                )
+
+script(type="text/x-template")#preview-thumbs
+    ul.works-slider__thumbs
+        li.works-slider__thumb-item(
+            v-for="slide in works" :key="slide.id"
+            :class="{active: currentWork.id === slide.id}"
+        )
+            button(type="button" target="_blank").works-slider__thumb-link
+                img(:src="slide.photo").works-slider__thumb
+
+script(type="text/x-template")#preview-btns
+    .works-slider__buttons
+        button(
+            type="button"
+            @click="$emit('slide', 'next')"
+        ).works-slider__btn.works-slider__btn_prev
+        button(
+            type="button"
+            @click="$emit('slide', 'prev')"
+        ).works-slider__btn.works-slider__btn_next
+
+script(type="text/x-template")#preview-info
+    .works-slider__data
+        tags(
+            :tags="tagsArray"
+        )
+        .works-slider__title {{currentWork.title}}
+        .works-slider__desc
+            p {{currentWork.desc}}
+        .works-slider__link
+            a(:href="currentWork.link" target="_blank").iconed-link Посмотреть сайт
+
+script(type="text/x-template")#preview-tags
+    ul.works-slider__tags
+            li.works-slider__tag-item(v-for="tag in tags")
+                .tag {{tag}}

@@ -11,14 +11,29 @@
     position: absolute;
     background: url('~images/bg/hands-keyboard1800.png') left bottom / contain no-repeat;
     display: block;
-    left: 36.5%;
-    transform: translateX(-100%);
+    left: 0;
     bottom: -91px;
     height: 983px;
     width: 662px;
 
+    @include desktopHd {
+      transform: translateX(-100%);
+      left: 36.5%;
+    }
+
+    @include tablets {
+      transform: rotate(-90deg);
+      left: 28%;
+      bottom: -74px;
+      height: 486px;
+      width: 337px;
+    }
+
     @include phones {
-      width: 100%;
+      left: 15%;
+      bottom: -42px;
+      height: 320px;
+      width: 235px;
     }
   }
 }
@@ -26,10 +41,6 @@
 .values__container {
   position: relative;
   padding: 8% 0 0;
-
-  @include tablets {
-    padding-bottom: 350px;
-  }
 }
 
 .values__wrapper {
@@ -40,6 +51,10 @@
   margin-bottom: 80px;
   display: flex;
   justify-content: center;
+
+  @include tablets {
+    margin-bottom: 60px;
+  }
 }
 
 .values__title-container {
@@ -50,7 +65,7 @@
     margin-left: 0;
   }
   @include tablets {
-    width: 68%;
+    width: 65%;
     text-align: center;
   }
   @include phones {
@@ -64,12 +79,25 @@
   font-size: 30px;
   font-weight: 700;
   margin-bottom: 55px;
+
+  @include tablets {
+    padding: 0 20%;
+  margin-bottom: 36px;
+  }
+
+  @include phones {
+    padding: 0;
+  }
 }
 
 .values__content {
   color: rgba($text-color, .5);
   font-weight: 600;
   line-height: 1.8;
+
+  @include tablets {
+    line-height: 1.7;
+  }
 }
 
 .values__widget {
@@ -85,5 +113,6 @@
 
   @include tablets {
     width: 95%;
+    margin-bottom: 20%;
   }
 }
