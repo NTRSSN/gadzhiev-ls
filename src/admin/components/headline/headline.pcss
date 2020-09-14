@@ -1,6 +1,5 @@
 .headline-component {
     background-image: linear-gradient(to top, #3e3e59, #454573);
-    color: #ffffff80;
 }
 
 .headline-container {
@@ -19,5 +18,21 @@
 }
 
 .title {
+    color: #ffffff80;
     margin-left: 30px;
+}
+
+@media (max-width: 480px) {
+    .title {
+        display: none;
+    }
+
+    .headline-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .buttons {
+        margin-left: 48px;
+    }
 }

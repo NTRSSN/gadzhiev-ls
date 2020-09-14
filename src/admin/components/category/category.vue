@@ -9,7 +9,11 @@
         <template slot="content">
             <ul class="skills" v-if="empty === false">
                 <li class="item" v-for="skill in skills" :key="skill.id">
-                    <skill :skill="skill" />
+                    <skill
+                        :skill="skill"
+                        @remove="$emit('remove-skill', $event)"
+                        @approve="$emit('edit-skill', $event)"
+                    />
                 </li>
             </ul>
             <div class="bottom-line">
@@ -52,7 +56,7 @@ export default {
 }
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
     .item {
         margin-bottom: 30px;
 
@@ -65,5 +69,19 @@ export default {
         padding-top: 70px;
         padding-left: 25%;
         margin-top: auto;
+    }
+
+    @media (max-width: 480px) {
+        .list {
+            .item {
+                margin-bottom: 0;
+            }
+        }
+
+        .bottom-line {
+        padding-top: 40px;
+        padding-left: 0;
+        margin-top: auto;
+    }
     }
 </style>
