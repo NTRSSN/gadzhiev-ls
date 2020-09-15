@@ -74,7 +74,7 @@ export default {
     @media (max-width: 480px) {
         .list {
             .item {
-                margin-bottom: 0;
+                // margin-bottom: 0;
             }
         }
 

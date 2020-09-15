@@ -3,12 +3,12 @@
         :class="['skill-add-line-component', {blocked: blocked}]"
     >
         <div class="title">
-            <app-input />
+            <app-input placeholder="Новый навык" />
         </div>
         <div class="percent">
             <app-input type="number" min="0" max="100" maxlength="3" />
         </div>
-        <iconed-button type="iconed" title="" />
+        <iconed-button type="round" title="" />
     </div>
 </template>
 
