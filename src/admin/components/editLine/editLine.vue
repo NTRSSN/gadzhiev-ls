@@ -9,6 +9,7 @@
     <div v-else class="title">
       <div class="input">
         <app-input
+          v-model="NewGroupTitle"
           placeholder="Название новой группы"
           :value="value"
           :errorText="errorText"
@@ -16,7 +17,9 @@
           @keydown.native.enter="onApprove"
           autofocus="autofocus"
           no-side-paddings="no-side-paddings"
-        ></app-input>
+        >
+        </app-input>
+        <div class="message">{{ validation.firstError('NewGroupTitle') }}</div>
       </div>
       <div class="buttons">
         <div class="button-icon">
@@ -31,7 +34,17 @@
 </template>
 
 <script>
+import SimpleVueValidator from 'simple-vue-validator';
+
+const Validator = SimpleVueValidator.Validator;
+
 export default {
+    mixins: [SimpleVueValidator.mixin],
+    validators: {
+        'NewGroupTitle': function(value) {
+            return Validator.value(value).required();
+        }
+    },
   props: {
     value: {
       type: String,
@@ -47,7 +60,8 @@ export default {
   data() {
     return {
       editmode: this.editModeByDefault,
-      title: this.value
+      title: this.value,
+      NewGroupTitle: ""
     };
   },
   methods: {
